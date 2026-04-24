@@ -78,3 +78,50 @@ body {
     background-repeat: no-repeat;
     background-size: cover;
 }
+
+.filter-chip{
+    border: 1.5px solid var(--sub-gold);
+    background: transparent;
+   
+    color: var(--main-gold);
+   
+    padding: 10px 24px;
+    border-radius: 40px;
+}
+   
+.filter-chip:hover{
+    background-color: var(--extra-plum);
+    color: var(--main-background);
+}
+   
+.filter-chip.active{
+    background: var(--extra-plum);
+    border-color: var(--extra-plum);
+    color: white;
+}
+
+.recipe-card{
+    background:white;
+    border:1.5px solid var(--sub-gold);
+    border-radius:18px;
+    padding:16px;
+    height:100%;
+}
+   
+.recipe-img{
+    height:190px;
+    background-color: var(--main-background);
+    border-radius:12px;
+    margin-bottom:18px;
+}
+   
+.recipe-card h4{
+    color: var(--main-gold);
+}
+   
+.recipe-tag{
+    background:#f6efe4;
+    color:var(--main-gold);
+    padding:6px 12px;
+    border-radius:6px;
+}
