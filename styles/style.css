@@ -1,0 +1,80 @@
+@import url(config.css);
+
+*{
+    margin: 0;
+    padding: 0;
+    color: var(--main-gold);;
+}
+
+body {
+    background-color: var(--main-background)
+}
+
+.navbar-links-cont h6{
+    color: var(--main-gold);
+}
+
+.navbar-links-cont h6:hover {
+    color: var(--extra-plum);
+    transition: 0.3s;
+}
+
+.header {
+    border-bottom: 1px solid var(--sub-gold);
+}
+
+.search-section{
+    background: var(--main-background);
+    padding: 6rem 0;
+}
+
+.search-section h1{
+    color: var(--main-gold);
+}
+
+.search-section p{
+    color: var(--sub-gold);
+}
+
+.search-section .form-control{
+    border: 1px solid var(--main-gold);
+    /* border: none; */
+    border-radius: 20px 0 0 20px;
+    padding: 12px 24px;
+    background: white;
+    color: var(--main-gold);
+}
+
+.search-section .form-control:focus{
+    border-color: var(--main-gold);
+    box-shadow: none;
+}
+
+.search-section .btn{
+    background: var(--main-gold);
+    color: white;
+    border: 2px solid var(--main-gold);
+    border-radius: 0 20px 20px 0;
+    padding: 12px 28px;
+}
+
+.search-section .btn:hover{
+    background: var(--extra-plum);
+    border-color: var(--extra-plum);
+    transition: 0.3s;
+}
+
+.search-container{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.search-section {
+    /* background-color: var(--background-gold); */
+    background-image: url(../images/background-borders.jfif);
+    height: auto;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
