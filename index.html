@@ -9,47 +9,10 @@
     <link rel="stylesheet" href="./styles/style.css">
   </head>
   <body>
-    <!-- header - navbar -->
-    <header class="header">
-        <nav class="navbar navbar-expand-lg">
-            <div class="container-fluid mx-4">
-              <a class="navbar-brand" href="#">
-                <h3>
-                    <img src="./images/favicon-pie.png" alt="Logo" width="35" height="35" class="d-inline-block align-text-top">
-                    Pantry Baking
-                </h3>
-              </a>
-              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-              </button>
-              <div class="collapse navbar-collapse ms-auto" id="navbarSupportedContent">
-                <ul class="navbar-nav ms-auto navbar-links-cont">
-                    <li class="nav-item">
-                        <a class="nav-link" href="#"><h6>Home</h6></a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#"><h6>Recipes</h6></a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#"><h6>Community</h6></a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#"><h6>About</h6></a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#"><h6>Contact</h6></a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#"><h6>Account</h6></a>
-                    </li>
-                </ul>
-              </div>
-            </div>
-        </nav>
-    </header>
+    <!-- header - navbar is being fetcheb by js from components -->
+    <header id="navbar"></header>
     <!-- search by ingredient -->
-    <!-- TODO change background for a carousel of images (or one endless image) -->
-     <section class="search-section">
+    <section class="search-section">
         <div class="container">
             <div class="row">
                 <div class="col text-center search-container mx-5 px-5">
@@ -63,6 +26,8 @@
             </div>
         </div>
     </section>
+    <!-- mini filters -->
+    <!-- TODO filters are decorative for now, functionality tba later -->
     <section class="filters-section py-5">
         <div class="container">
       
@@ -85,14 +50,16 @@
       
         </div>
     </section>
-    <section class="recipes-section py-3">
+    <!-- recipe cards -->
+    <!-- TODO data tba later from an api (idk what to do with images)-->
+    <section class="recipes-section py-3 pb-5">
         <div class="container">
           <div class="row g-4" id="recipe-container">
             <!-- get cards with js -->
           </div>
         </div>
     </section>
-    
+    <footer id="footer"></footer>
 
 
 
