@@ -40,7 +40,7 @@ header {
     color: var(--sub-gold);
 }
 
-.search-section .form-control{
+.search-section .form-control, .all-recipes-form{
     border: 1px solid var(--main-gold);
     /* border: none; */
     border-radius: 20px 0 0 20px;
@@ -49,12 +49,13 @@ header {
     color: var(--main-gold);
 }
 
-.search-section .form-control:focus{
+.search-section .form-control:focus,
+.all-recipes-form:focus{
     border-color: var(--main-gold);
     box-shadow: none;
 }
 
-.search-section .btn{
+.search-section .btn, .all-recipes-btn{
     background: var(--main-gold);
     color: white;
     border: 2px solid var(--main-gold);
@@ -62,7 +63,8 @@ header {
     padding: 12px 28px;
 }
 
-.search-section .btn:hover{
+.search-section .btn:hover,
+.all-recipes-btn:hover{
     background: var(--extra-plum);
     border-color: var(--extra-plum);
     transition: 0.3s;
@@ -102,6 +104,12 @@ header {
     background: var(--extra-plum);
     border-color: var(--extra-plum);
     color: white;
+}
+
+.filters-section hr{
+    margin-top: 4rem;
+    border-color: var(--sub-gold);
+    opacity:1;
 }
 
 .recipe-card{
