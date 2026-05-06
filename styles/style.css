@@ -3,7 +3,7 @@
 *{
     margin: 0;
     padding: 0;
-    color: var(--main-gold);;
+    color: var(--dark-brown);
 }
 
 body {
@@ -15,16 +15,16 @@ body {
 }
 
 .navbar-links-cont h6{
-    color: var(--main-gold);
+    color: var(--dark-brown);
 }
 
 .navbar-links-cont h6:hover {
-    color: var(--extra-plum);
+    color: var(--extra-brown);
     transition: 0.3s;
 }
 
 header {
-    border-bottom: 1px solid var(--sub-gold);
+    border-bottom: 1px solid var(--sub-cream);
 }
 
 .search-section{
@@ -33,40 +33,40 @@ header {
 }
 
 .search-section h1{
-    color: var(--main-gold);
+    color: var(--dark-brown);
 }
 
 .search-section p{
-    color: var(--sub-gold);
+    color: var(--extra-brown);
 }
 
 .search-section .form-control, .all-recipes-form{
-    border: 1px solid var(--main-gold);
+    border: 1px solid var(--main-cream);
     /* border: none; */
     border-radius: 20px 0 0 20px;
     padding: 12px 24px;
     background: white;
-    color: var(--main-gold);
+    color: var(--dark-brown);
 }
 
 .search-section .form-control:focus,
 .all-recipes-form:focus{
-    border-color: var(--main-gold);
+    border-color: var(--main-cream);
     box-shadow: none;
 }
 
 .search-section .btn, .all-recipes-btn{
-    background: var(--main-gold);
+    background: var(--extra-brown);
     color: white;
-    border: 2px solid var(--main-gold);
+    border: 2px solid var(--extra-brown);
     border-radius: 0 20px 20px 0;
     padding: 12px 28px;
 }
 
 .search-section .btn:hover,
 .all-recipes-btn:hover{
-    background: var(--extra-plum);
-    border-color: var(--extra-plum);
+    background: var(--dark-brown);
+    border-color: var(--dark-brown);
     transition: 0.3s;
 }
 
@@ -77,7 +77,6 @@ header {
 }
 
 .search-section {
-    /* background-color: var(--background-gold); */
     background-image: url(../images/background-borders.jfif);
     height: auto;
     background-position: center;
@@ -86,35 +85,35 @@ header {
 }
 
 .filter-chip{
-    border: 1.5px solid var(--sub-gold);
+    border: 1.5px solid var(--extra-brown);
     background: transparent;
    
-    color: var(--main-gold);
+    color: var(--extra-brown);
    
     padding: 10px 24px;
     border-radius: 40px;
 }
    
 .filter-chip:hover{
-    background-color: var(--extra-plum);
-    color: var(--main-background);
+    background-color: var(--dark-brown);
+    color: var(--sub-cream);
 }
    
 .filter-chip.active{
-    background: var(--extra-plum);
-    border-color: var(--extra-plum);
+    background: var(--extra-brown);
+    border-color: var(--extra-brown);
     color: white;
 }
 
 .filters-section hr{
     margin-top: 4rem;
-    border-color: var(--sub-gold);
+    border-color: var(--main-cream);
     opacity:1;
 }
 
 .recipe-card{
     background:white;
-    border:1.5px solid var(--sub-gold);
+    border:1.5px solid var(--main-cream);
     border-radius:18px;
     padding:16px;
     height:100%;
@@ -122,18 +121,18 @@ header {
    
 .recipe-img{
     height:190px;
-    background-color: var(--main-background);
+    background-color: var(--sub-cream);
     border-radius:12px;
     margin-bottom:18px;
 }
    
 .recipe-card h4{
-    color: var(--main-gold);
+    color: var(--dark-brown);
 }
    
 .recipe-tag{
-    background:#f6efe4;
-    color:var(--main-gold);
+    background:var(--sub-cream);
+    color:var(--dark-brown);
     padding:6px 12px;
     border-radius:6px;
 }
@@ -143,22 +142,22 @@ header {
    }
    
 .site-footer hr{
-    border-color: var(--sub-gold);
+    border-color: var(--main-cream);
     opacity:1;
 }
    
 .site-footer h5{
-    color: var(--main-gold);
+    color: var(--dark-brown);
     margin-bottom:1rem;
 }
    
 .site-footer a{
     text-decoration:none;
-    color: var(--main-gold);
+    color: var(--dark-brown);
 }
    
 .site-footer a:hover{
-    color: var(--extra-plum);
+    color: var(--extra-brown);
 }
    
 .site-footer li{
@@ -166,5 +165,5 @@ header {
 }
    
 .site-footer p{
-    color: var(--main-gold);
+    color: var(--main-cream);
 }
