@@ -246,3 +246,7 @@ header {
 
     animation: spinCookie 3s linear infinite;
 }
+
+.hide{
+    display: none;
+}

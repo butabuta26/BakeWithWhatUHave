@@ -19,45 +19,20 @@ if (singleRecipeContainer) {
                 `;
                 return;
             }
-            // singleRecipeContainer.innerHTML = `
-            
-            //     <h1>${recipe.name}</h1>
-
-            //     <div class="recipe-img"></div>
-
-            //     <p>${recipe.description}</p>
-
-            //     <h3>Ingredients</h3>
-
-            //     <ul>
-            //         ${recipe.ingredients
-            //             .map(ingredient => `<li>${ingredient}</li>`)
-            //             .join('')
-            //         }
-            //     </ul>
-
-            //     <h3>Instructions</h3>
-
-            //     <p>${recipe.instructions}</p>
-
-            // `;
             singleRecipeContainer.innerHTML = `
             
-            <h1>${recipe.name}</h1>
-
-            <div class="recipe-img"></div>
-
-            <div class="d-flex gap-2 mt-3">
-
-                <span class="recipe-tag">
-                    ${recipe.time}
-                </span>
-
-                <span class="recipe-tag">
-                    ${recipe.difficulty}
-                </span>
-
-            </div>
+                <h1>${recipe.name}</h1>
+                <div class="recipe-img"></div>
+                <p>${recipe.description}</p>
+                <h3>Ingredients</h3>
+                <ul>
+                    ${recipe.ingredients
+                        .map(ingredient => `<li>${ingredient}</li>`)
+                        .join('')
+                    }
+                </ul>
+                <h3>Instructions</h3>
+                <p>${recipe.instructions}</p>
 
             `;
         })
