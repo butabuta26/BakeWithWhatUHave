@@ -1,5 +1,11 @@
 import { getRandomMeal, getMealsByCategory, getRandomDessertFeed } from './api.js';
 
+// pagination
+const ITEMS_PER_PAGE = 12;
+
+let allRecipes = [];
+let currentPage = 1;
+
 // fix paths
 export function getPath(path) {
     const isInPages = window.location.pathname.includes('/pages/');
@@ -69,17 +75,21 @@ function displayFeaturedRecipeCards(recipes){
     }
 }
 
-export function displayAllRecipeCards(recipes){
+export function displayAllRecipeCards(recipes, page = 1){
     const allRecipesContainer = document.querySelector('#recipe-container');
-    if (allRecipesContainer) {
-        allRecipesContainer.innerHTML = '';
-        recipes.forEach(recipe => {
-            const card = document.createElement('div');
-            card.className = 'col-md-6 col-lg-3';
-            card.innerHTML = createRecipeCard(recipe);
-            allRecipesContainer.appendChild(card);
-        });
-    }
+    if (!allRecipesContainer) return;
+
+    allRecipesContainer.innerHTML = '';
+
+    const start = (page - 1) * ITEMS_PER_PAGE;
+    const paginated = recipes.slice(start, start + ITEMS_PER_PAGE);
+
+    paginated.forEach(recipe => {
+        const card = document.createElement('div');
+        card.className = 'col-md-6 col-lg-3';
+        card.innerHTML = createRecipeCard(recipe);
+        allRecipesContainer.appendChild(card);
+    });
 }
 
 // suffle recipes
@@ -87,39 +97,72 @@ export function shuffleArray(array) {
     return array.sort(() => Math.random() - 0.5);
 }
 
-// fetch(getPath('datas/data.json'))
-// .then(response => response.json())
-// .then(recipes => {
-//     displayFeaturedRecipeCards(recipes);
-//     displayAllRecipeCards(recipes);
+// pagination logic
+function renderPagination(recipes) {
+    const pagination = document.querySelector('#pagination');
+    if (!pagination) return;
+
+    pagination.innerHTML = '';
+
+    const pageCount = Math.ceil(recipes.length / ITEMS_PER_PAGE);
     
-// })
-// .catch(error => console.log(error));
+    // go to previous
+    const prev = document.createElement('li');
+    prev.className = `page-item ${currentPage === 1 ? 'disabled' : ''}`;
+    prev.innerHTML = `<button class="page-link">Previous</button>`;
+    prev.onclick = () => {
+        if (currentPage > 1) {
+            currentPage--;
+            displayAllRecipeCards(allRecipes, currentPage);
+            renderPagination(allRecipes);
+        }
+    };
+    pagination.appendChild(prev);
 
+    for (let i = 1; i <= pageCount; i++) {
+        const li = document.createElement('li');
+        li.className = `page-item ${i === currentPage ? 'active' : ''}`;
 
-// getRandomMeal()
-// .then(recipe => {
+        const btn = document.createElement('button');
+        btn.className = 'page-link';
+        btn.textContent = i;
 
-//     displayFeaturedRecipeCards([recipe]);
-//     displayAllRecipeCards([recipe]);
+        btn.addEventListener('click', () => {
+            currentPage = i;
+            displayAllRecipeCards(allRecipes, currentPage);
+            renderPagination(allRecipes);
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
 
-// })
-// .catch(error => console.log(error));
+        li.appendChild(btn);
+        pagination.appendChild(li);
+    }
 
-// getRandomMeal().then(meal => {
-//     console.log(meal);
-// });
+    // go to next
+    const next = document.createElement('li');
+    next.className = `page-item ${currentPage === pageCount ? 'disabled' : ''}`;
+    next.innerHTML = `<button class="page-link">Next</button>`;
+    next.onclick = () => {
+        if (currentPage < pageCount) {
+            currentPage++;
+            displayAllRecipeCards(allRecipes, currentPage);
+            renderPagination(allRecipes);
+        }
+    };
+    pagination.appendChild(next);
+}
+
 
 getMealsByCategory('Dessert')
 .then(recipes => {
+    allRecipes = recipes;
+    currentPage = 1;
 
-    // displayFeaturedRecipeCards(recipes);
-    displayAllRecipeCards(recipes);
-
+    displayAllRecipeCards(allRecipes, currentPage);
+    renderPagination(allRecipes);
 });
 
 getRandomDessertFeed(8)
 .then(recipes => {
     displayFeaturedRecipeCards(recipes);
-    // displayAllRecipeCards(recipes);
 });

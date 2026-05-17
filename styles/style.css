@@ -372,3 +372,37 @@ header {
     background-color: var(--dark-brown);
     color: var(--sub-cream);
 }
+
+
+.pagination .page-link {
+    color: var(--extra-brown);
+    background-color: var(--main-background);
+    border: 1.5px solid var(--main-cream);
+    border-radius: 10px;
+    margin: 0 4px;
+    transition: 0.2s ease;
+}
+
+.pagination .page-link:hover {
+    background-color: var(--extra-brown);
+    color: white;
+    border-color: var(--extra-brown);
+}
+
+.pagination .page-item.active .page-link {
+    background-color: var(--extra-brown);
+    border-color: var(--extra-brown);
+    color: white;
+}
+
+.pagination .page-item.disabled .page-link {
+    color: var(--main-cream);
+    background-color: #fff;
+    border-color: var(--main-cream);
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.pagination .page-link:focus {
+    box-shadow: none;
+}
