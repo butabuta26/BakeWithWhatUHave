@@ -18,10 +18,20 @@ function contact(req, res) {
     res.render('contact');
 }
 
+function login(req, res) {
+    res.render('login');
+}
+
+function register(req, res) {
+    res.render('register');
+}
+
 module.exports = {
     home,
     recipes,
     recipe,
     about,
-    contact
+    contact,
+    login,
+    register
 };
