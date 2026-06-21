@@ -521,3 +521,8 @@ a:hover{
         font-size:2rem;
     }
 }
+
+.logout-button{
+    background-color: var(--main-background);
+    border: none;
+}

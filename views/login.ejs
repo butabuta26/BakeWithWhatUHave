@@ -19,13 +19,21 @@
             <div class="auth-icon">
                 <i class="bi bi-cup-hot-fill"></i>
             </div>   
+
+            <% if (messages.error && messages.error.length > 0) { %>
+                <div class="alert alert-danger">
+                    <%= messages.error[0] %>
+                </div>
+            <% } %>
+
             <h1>Welcome back</h1>
             <p>Sign in to access your saved recipes</p>   
-            <form>   
+            <form action="/login" method="POST">   
                 <div class="mb-3">
                     <label>Email address</label>
                     <input
                         type="email"
+                        name="email"
                         class="form-control"
                         placeholder="you@example.com">
                 </div>
@@ -39,6 +47,7 @@
         
                     <input
                         type="password"
+                        name="password"
                         class="form-control"
                         placeholder="••••••••">
                 </div>

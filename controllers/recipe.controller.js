@@ -18,9 +18,15 @@ function contact(req, res) {
     res.render('contact');
 }
 
+
 function login(req, res) {
-    res.render('login');
+    const messages = req.flash();
+
+    console.log(messages);
+
+    res.render("login", { messages });
 }
+
 
 function register(req, res) {
     res.render('register');
