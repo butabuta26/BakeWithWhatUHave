@@ -1,4 +1,5 @@
 const express = require("express");
+const authController = require("../controllers/auth.controller");
 
 const router = express.Router();
 const {checkAuthenticated, checkNotAuthenticated} = require("../middleware/auth");
@@ -10,7 +11,7 @@ router.post("/login", checkNotAuthenticated, passport.authenticate("local", {
     successRedirect: "/",
     failureRedirect: "/login",
     failureFlash: true
-})
+    })
 );
 
 router.post("/register", checkNotAuthenticated, async (req, res) => {
@@ -45,17 +46,13 @@ router.post("/register", checkNotAuthenticated, async (req, res) => {
     }
 });
 
-router.get('/', checkAuthenticated, (req, res) => {
-    res.render("index.ejs", {name: req.user.name})
-})
-
-router.get('/login', checkNotAuthenticated, (req, res) => {
-    res.render("login.ejs")
-})
-
-router.get("/register", checkNotAuthenticated, (req, res) => {
-    res.render("register.ejs")
+router.get("/", checkAuthenticated, (req, res) => {
+    res.render("index");
 });
+
+router.get("/login", checkNotAuthenticated, authController.login);
+
+router.get("/register", checkNotAuthenticated, authController.register);
 
 router.delete("/logout", (req, res) => {
     req.logout(req.user, err => {

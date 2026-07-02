@@ -11,6 +11,7 @@ const methodOverride = require("method-override");
 const initializePassport = require("./passport-config");
 const recipeRoutes = require("./routes/recipe.routes");
 const authRoutes = require("./routes/auth.routes");
+const accountRoutes = require("./routes/account.routes");
 
 const app = express();
 
@@ -43,11 +44,18 @@ app.use(flash());
 
 app.use(passport.initialize());
 app.use(passport.session());
+
+app.use((req, res, next) => {
+    res.locals.user = req.user;
+    next();
+});
+
 app.use(methodOverride("_method"))
 
 // Routes
 app.use("/", recipeRoutes);
 app.use("/", authRoutes);
+app.use("/account", accountRoutes);
 
 app.listen(3000, () => {
     console.log("Server running on port 3000");

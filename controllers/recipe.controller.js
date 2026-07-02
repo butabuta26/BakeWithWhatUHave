@@ -18,16 +18,10 @@ function contact(req, res) {
     res.render('contact');
 }
 
-function account(req, res) {
-    res.render("account");
-}
-
-
 module.exports = {
     home,
     recipes,
     recipe,
     about,
-    contact,
-    account
+    contact
 };

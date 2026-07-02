@@ -7,6 +7,5 @@ router.get('/recipes', pageController.recipes);
 router.get('/recipe/:id', pageController.recipe);
 router.get('/about', pageController.about);
 router.get('/contact', pageController.contact);
-router.get('/account', pageController.account);
 
 module.exports = router;
