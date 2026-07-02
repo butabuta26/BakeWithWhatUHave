@@ -1,5 +1,5 @@
 function account(req, res) {
-    console.log(req.user);
+    // console.log(req.user);
     res.render("account");
 }
 
